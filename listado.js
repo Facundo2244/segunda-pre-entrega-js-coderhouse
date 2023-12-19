@@ -1,18 +1,18 @@
-var nombreprofesor = prompt("Por favor ingrese su nombre")
-var nombreescuela = prompt("Por favor ingrese el nombre de la escuela")
-var curso = prompt("Sobre qué curso desea obtener el listado?")
-var cantidadalumnos = parseInt(prompt("Cuántos alumnos tiene" + " " + curso + "?"))
-var listaestudiantes = []
+let nombreprofesor = prompt("Por favor ingrese su nombre")
+let nombreescuela = prompt("Por favor ingrese el nombre de la escuela")
+let curso = prompt("Sobre qué curso desea obtener el listado?")
+let cantidadalumnos = parseInt(prompt("Cuántos alumnos tiene" + " " + curso + "?"))
+let listaestudiantes = []
 
 while (isNaN(cantidadalumnos)){
     cantidadalumnos = parseInt(prompt("El número ingresado es inválido, por favor ingrese el valor en DÍGITOS."))
 } 
 
-for (var iterador = 0; iterador < cantidadalumnos; iterador++){
-    var nombre = prompt("Nombre del estudiante n°" + (iterador + 1));
-    var apellido = prompt("Apellido del estudiante n°" + (iterador + 1));
-    var promedios = promedio ()
-    var estudiante ={
+for (let iterador = 0; iterador < cantidadalumnos; iterador++){
+    let nombre = prompt("Nombre del estudiante n°" + (iterador + 1));
+    let apellido = prompt("Apellido del estudiante n°" + (iterador + 1));
+    let promedios = promedio ()
+    let estudiante ={
         nombre : nombre,
         apellido : apellido,
         promedio : promedios,
@@ -21,7 +21,7 @@ for (var iterador = 0; iterador < cantidadalumnos; iterador++){
 
 }
 
-console.log("Bienvenida profe" + nombreprofesor + ", a continuación uste puede ver su listado de alumnos del curso" + curso + " de la escuela " + nombreescuela)
+console.log("Bienvenida profe " + nombreprofesor + ", a continuación usted puede ver su listado de alumnos del curso " + curso + " de la escuela " + nombreescuela)
 console.table(listaestudiantes)
 
 let aprobados = listaestudiantes.filter(alumno => alumno.promedio >= 6)
