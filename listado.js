@@ -1,8 +1,9 @@
-let nombreprofesor = prompt("Por favor ingrese su nombre")
+clet nombreprofesor = prompt("Por favor ingrese su nombre")
 let nombreescuela = prompt("Por favor ingrese el nombre de la escuela")
 let curso = prompt("Sobre qué curso desea obtener el listado?")
 let cantidadalumnos = parseInt(prompt("Cuántos alumnos tiene" + " " + curso + "?"))
 let listaestudiantes = []
+
 
 while (isNaN(cantidadalumnos)){
     cantidadalumnos = parseInt(prompt("El número ingresado es inválido, por favor ingrese el valor en DÍGITOS."))
@@ -27,14 +28,34 @@ console.table(listaestudiantes)
 let aprobados = listaestudiantes.filter(alumno => alumno.promedio >= 6)
 let desaprobados = listaestudiantes.filter(alumno => alumno.promedio < 6)
 
-console.log("Los alumnos aprobados son:")
-console.table(aprobados)
+if (aprobados.length > 0){
+    console.log("Los alumnos aprobados son:")
+    console.table(aprobados)
+} else{
+    console.log("lo sentimos, no hay alumnos aprobados")
+}
 
-console.log("Los alumnos desaprobados son:")
-console.table(desaprobados)
+if (desaprobados.length > 0){
+    console.log("Los alumnos desaprobados son:")
+    console.table(desaprobados)
+} else{
+    console.log("Felicitaciones! no hay alumnos desaprobados")
+}
 
+let mejornota = 0
+for (let alumno of listaestudiantes){
+    if (alumno.promedio > mejornota){
+        mejornota = alumno.promedio
+    }
+}
 
+for (let alumno of listaestudiantes){
+    if (alumno.promedio == mejornota){
+        console.log(alumno.nombre + " " + alumno.apellido + "es el mejor promedio.") //ver cómo dejar esto más prolijo
+    }
+}
 
+//modificar variables "var"
 function promedio () {
     var cantidadnotas = parseInt(prompt("Cuántas notas tiene"+ " ")) 
     while (isNaN(cantidadnotas)){
@@ -53,3 +74,4 @@ function promedio () {
     resultado = puntaje / cantidadnotas
     return resultado
 }
+
