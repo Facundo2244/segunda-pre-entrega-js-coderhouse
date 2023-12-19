@@ -21,11 +21,18 @@ for (var iterador = 0; iterador < cantidadalumnos; iterador++){
 
 }
 
-let aprobados = listaestudiantes.filter(alumno => alumno.promedio == 5)
-
+console.log("Bienvenida profe" + nombreprofesor + ", a continuación uste puede ver su listado de alumnos del curso" + curso + " de la escuela " + nombreescuela)
 console.table(listaestudiantes)
 
-console.log(aprobados)
+let aprobados = listaestudiantes.filter(alumno => alumno.promedio >= 6)
+let desaprobados = listaestudiantes.filter(alumno => alumno.promedio < 6)
+
+console.log("Los alumnos aprobados son:")
+console.table(aprobados)
+
+console.log("Los alumnos desaprobados son:")
+console.table(desaprobados)
+
 
 
 function promedio () {
