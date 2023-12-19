@@ -21,13 +21,11 @@ for (var iterador = 0; iterador < cantidadalumnos; iterador++){
 
 }
 
-console.log(listaestudiantes)
+let aprobados = listaestudiantes.filter(alumno => alumno.promedio == 5)
 
+console.table(listaestudiantes)
 
-
-
-
-
+console.log(aprobados)
 
 
 function promedio () {
