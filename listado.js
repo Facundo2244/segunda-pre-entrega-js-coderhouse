@@ -1,8 +1,9 @@
-clet nombreprofesor = prompt("Por favor ingrese su nombre")
+let nombreprofesor = prompt("Por favor ingrese su nombre")
 let nombreescuela = prompt("Por favor ingrese el nombre de la escuela")
 let curso = prompt("Sobre qué curso desea obtener el listado?")
 let cantidadalumnos = parseInt(prompt("Cuántos alumnos tiene" + " " + curso + "?"))
 let listaestudiantes = []
+let listadomejores = []
 
 
 while (isNaN(cantidadalumnos)){
@@ -51,9 +52,11 @@ for (let alumno of listaestudiantes){
 
 for (let alumno of listaestudiantes){
     if (alumno.promedio == mejornota){
-        console.log(alumno.nombre + " " + alumno.apellido + "es el mejor promedio.") //ver cómo dejar esto más prolijo
+        listadomejores.push((alumno.nombre + " " +alumno.apellido))
     }
 }
+
+console.log("El promedio más alto del curso " + curso + " es: " + mejornota + "." + " Los alumnos con ese promedio son: " +listadomejores.join(", ") +".")
 
 //modificar variables "var"
 function promedio () {
@@ -71,7 +74,7 @@ function promedio () {
         var contadornotas = contadornotas + 1
         var puntaje = puntaje + nota
     }
-    resultado = puntaje / cantidadnotas
+    resultado = (puntaje / cantidadnotas).toFixed(2)
     return resultado
 }
 
