@@ -56,25 +56,25 @@ for (let alumno of listaestudiantes){
     }
 }
 
+
 console.log("El promedio más alto del curso " + curso + " es: " + mejornota + "." + " Los alumnos con ese promedio son: " +listadomejores.join(", ") +".")
 
-//modificar variables "var"
 function promedio () {
-    var cantidadnotas = parseInt(prompt("Cuántas notas tiene"+ " ")) 
+    let cantidadnotas = parseInt(prompt("Cuántas notas tiene"+ " ")) 
     while (isNaN(cantidadnotas)){
         cantidadnotas = parseInt(prompt("El número ingresado es inválido, por favor ingrese el valor en DÍGITOS."))
     } 
-    var contadornotas = 1
-    var puntaje = 0
+    let contadornotas = 1
+    let puntaje = 0
     while (contadornotas <= cantidadnotas){
-        var nota = parseInt(prompt("por favor ingrese la nota n°"+ " " + String(contadornotas)))
+        let nota = parseInt(prompt("por favor ingrese la nota n°"+ " " + String(contadornotas)))
         while (isNaN(nota) || (nota < 1 || nota >10)){
             nota = parseInt(prompt("La nota ingresada es inválida, por favor ingrese un valor entre 1 y 10 expresado en DÍGITOS."))
         }
-        var contadornotas = contadornotas + 1
-        var puntaje = puntaje + nota
+        contadornotas = contadornotas + 1
+        puntaje = puntaje + nota
     }
-    resultado = (puntaje / cantidadnotas).toFixed(2)
+    let resultado = (puntaje / cantidadnotas).toFixed(2)
     return resultado
 }
 
