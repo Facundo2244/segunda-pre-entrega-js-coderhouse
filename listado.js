@@ -23,7 +23,7 @@ for (let iterador = 0; iterador < cantidadalumnos; iterador++){
 
 }
 
-console.log("Bienvenida profe " + nombreprofesor + ", a continuación usted puede ver su listado de alumnos del curso " + curso + " de la escuela " + nombreescuela + "ordenado alfabéticamente.") 
+console.log("Bienvenida profe " + nombreprofesor + ", a continuación usted puede ver su listado de alumnos del curso " + curso + " de la escuela " + nombreescuela + " ordenado alfabéticamente por apellido.") 
 listaestudiantes.sort((a , b) => {
     if (a.apellido < b.apellido){
         return -1;
