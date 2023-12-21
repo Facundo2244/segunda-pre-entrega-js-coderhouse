@@ -55,6 +55,12 @@ for (let alumno of listaestudiantes){
         listadomejores.push((alumno.nombre + " " +alumno.apellido))
     }
 }
+promediossumados = 0
+for (let alumno of listaestudiantes){
+    promediossumados = promediossumados + parseFloat(alumno.promedio)
+}
+
+console.log("El promedio general de " + curso + " es: " + (promediossumados/cantidadalumnos).toFixed(2))
 
 
 console.log("El promedio más alto del curso " + curso + " es: " + mejornota + "." + " Los alumnos con ese promedio son: " +listadomejores.join(", ") +".")
