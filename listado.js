@@ -58,7 +58,7 @@ for (let alumno of listaestudiantes){
 
 
 console.log("El promedio más alto del curso " + curso + " es: " + mejornota + "." + " Los alumnos con ese promedio son: " +listadomejores.join(", ") +".")
-console.log("El porcentaje de alumnos aprobados es: " + ((aprobados.length * 100) /cantidadalumnos) + "%")
+console.log("El porcentaje de alumnos aprobados es: " + ((aprobados.length * 100) /cantidadalumnos).toFixed(1) + "%")
 
 
 function promedio () {
