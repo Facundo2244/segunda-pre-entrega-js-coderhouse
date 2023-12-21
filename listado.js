@@ -15,15 +15,24 @@ for (let iterador = 0; iterador < cantidadalumnos; iterador++){
     let apellido = prompt("Apellido del estudiante n°" + (iterador + 1));
     let promedios = promedio ()
     let estudiante ={
-        nombre : nombre,
-        apellido : apellido,
+        nombre : nombre.toLowerCase(),
+        apellido : apellido.toLowerCase(),
         promedio : promedios,
     };
     listaestudiantes.push(estudiante);
 
 }
 
-console.log("Bienvenida profe " + nombreprofesor + ", a continuación usted puede ver su listado de alumnos del curso " + curso + " de la escuela " + nombreescuela)
+console.log("Bienvenida profe " + nombreprofesor + ", a continuación usted puede ver su listado de alumnos del curso " + curso + " de la escuela " + nombreescuela + "ordenado alfabéticamente.") 
+listaestudiantes.sort((a , b) => {
+    if (a.apellido < b.apellido){
+        return -1;
+    }
+    if (a.apellido > b.apellido){
+        return 1;
+    }
+    return 0;
+})
 console.table(listaestudiantes)
 
 let aprobados = listaestudiantes.filter(alumno => alumno.promedio >= 6)
@@ -45,8 +54,8 @@ if (desaprobados.length > 0){
 
 let mejornota = 0
 for (let alumno of listaestudiantes){
-    if (alumno.promedio > mejornota){
-        mejornota = alumno.promedio
+    if (mejornota < parseFloat(alumno.promedio)){
+        mejornota = parseFloat(alumno.promedio).toFixed(2)
     }
 }
 
